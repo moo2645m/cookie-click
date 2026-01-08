@@ -23,7 +23,6 @@ max-width: 90vw;
 <script>
 function loadAssetFrom(url, scale) {
 const img = new Image()
-img.src = url
 img.onload = () => {
 img.width = Math.floor(img.naturalWidth * scale)
 img.height = Math.floor(img.naturalHeight * scale)
@@ -31,6 +30,7 @@ img.height = Math.floor(img.naturalHeight * scale)
 img.onerror = () => {
 alert("Failed to load image from " +url)
 }
+img.src = url
 return img
 }
 
