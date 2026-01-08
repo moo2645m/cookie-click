@@ -18,10 +18,17 @@ top: 50%;
 transform: translate(-50%, -50%);
 display: block;
 }
+
+  
+#scoreDisplay {
+font-size: 16px;
+font-family: sans-serif;
+color: white;
+}
 </style>
 </head>
 <body>
-
+  <div id="scoreDisplay">Score: 0</div>
 <script>
 let score = 0
 function loadAssetFrom(url, scale) {
@@ -41,6 +48,7 @@ return img
 const image = loadAssetFrom("https://raw.githubusercontent.com/moo2645m/future-projects-use-this/main/assets/cookie", 0.5)
 image.addEventListener("click", () => {
   score += 1
+  scoreDisplay.textContent = "Score: " + score
 })
 </script>
 </body>
