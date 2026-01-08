@@ -7,7 +7,8 @@ initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Image Loader Test</title>
 <style>
 body{margin:0;background:#111;color:#fff;
-font-family:Arial,sans-serif;touch-action:manipulation;}
+font-family:Arial,sans-serif;touch-action:manipulation;
+overscroll-behavior-y:contain;user-select:none;}
 img{position:absolute;left:50%;top:50%;
 transform:translate(-50%,-50%);display:block;
 user-select:none;-webkit-user-drag:none;} 
@@ -16,7 +17,7 @@ top:calc(50% - 120px);left:0;font-size:24px;
 font-family:sans-serif;color:white;pointer-events:none;}
 </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 <div id="scoreDisplay">Score: 0</div>
 <script>
 const scoreDisplay=document.getElementById("scoreDisplay");
