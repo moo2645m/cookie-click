@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Image Loader Test</title>
+<style>
+body {
+margin: 0;
+background: #111;
+color: #fff;
+font-family: Arial, sans-serif;
+}
+img {
+display: block;
+margin: 20px auto;
+max-width: 90vw;
+}
+</style>
+</head>
+<body>
+
+<script>
+function loadAssetFrom(url, scale) {
+const img = new Image()
+img.src = url
+img.onload = () => {
+img.width = Math.floor(img.naturalWidth * scale)
+img.height = Math.floor(img.naturalHeight * scale)
+}
+img.onerror = () => {
+alert("Failed to load image from " +url)
+}
+return img
+}
+
+const image = loadAssetFrom("https://raw.githubusercontent.com/moo2645m/future-projects-use-this/main/assets/cookie", 0.01)
+document.body.appendChild(image)
+</script>
+</body>
+</html>
